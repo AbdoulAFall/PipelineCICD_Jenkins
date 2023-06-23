@@ -4,6 +4,9 @@ pipeline {
        IMAGE_TAG = "latest"
        STAGING = "abdoulafall-staging"
        PRODUCTION = "abdoulafall-production"
+       APP_EXPOSED_PORT = 80
+       APP_CONTAINER_PORT = 5000
+
      }
      agent none
      stages {
@@ -20,7 +23,7 @@ pipeline {
             steps {
                script {
                  sh '''
-                    docker run --name $IMAGE_NAME -d -p $PORT:80 -v /usr/share/nginx/html:/usr/share/nginx/html abdoulafall/$IMAGE_NAME:$IMAGE_TAG
+                    docker run --name $IMAGE_NAME -d -p $APP_EXPOSED_PORT:$APP_CONTAINER_PORT -v -e PORT=$APP_CONTAINER_PORT abdoulafall/$IMAGE_NAME:$IMAGE_TAG
                     sleep 5
                     docker ps -a
                  '''
