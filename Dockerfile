@@ -3,7 +3,7 @@ FROM nginx:1.21.1
  
 LABEL maintainter="AbdoulAFall" email="abdoulazizfall2@gmail.com"
 
-RUN apt-get uppdate && \
+RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y curl && \
     apt-get install -y git 
