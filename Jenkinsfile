@@ -19,12 +19,12 @@ pipeline {
             agent any
             steps {
                script {
-                 sh ''''
+                 sh '''
                     docker run --name $IMAGE_NAME -d -p 80:80 --env PORT:$PORT abdoulafall/$IMAGE_NAME:$IMAGE_TAG
                     sleep 5
-                    - docker ps -a
-                    - docker image ls
-                 ''''
+                    docker ps -a
+                    docker image ls
+                 '''
                }
             }
        }
