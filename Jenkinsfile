@@ -23,7 +23,7 @@ pipeline {
             steps {
                script {
                  sh '''
-                    docker run --name $IMAGE_NAME -d -p $APP_EXPOSED_PORT:$APP_CONTAINER_PORT -v -e PORT=$APP_CONTAINER_PORT abdoulafall/$IMAGE_NAME:$IMAGE_TAG
+                    docker run --name $IMAGE_NAME -d -p $APP_EXPOSED_PORT:$APP_CONTAINER_PORT -e PORT=$APP_CONTAINER_PORT abdoulafall/$IMAGE_NAME:$IMAGE_TAG
                     sleep 5
                     docker ps -a
                  '''
