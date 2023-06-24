@@ -1,4 +1,3 @@
-#Grab the latest alpine image
 FROM nginx:1.21.1
  
 LABEL maintainter="AbdoulAFall" email="abdoulazizfall2@gmail.com"

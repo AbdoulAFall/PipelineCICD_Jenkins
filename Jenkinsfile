@@ -6,7 +6,6 @@ pipeline {
        PRODUCTION = "abdoulafall-production"
        APP_EXPOSED_PORT = 80
        APP_CONTAINER_PORT = 5000
-
      }
      agent none
      stages {
